@@ -9,3 +9,9 @@
   (-> table
       (timestamp :last_update_date)
       (timestamp :creation_date (default (now)))))
+
+(defn refer-to [table ptable]
+  (let [cname (-> (->> ptable name butlast (apply str))
+                  (str "_id")
+                  keyword)]
+    (integer table cname [:refer ptable :id :on-delete :set-null])))
