@@ -15,3 +15,9 @@
                   (str "_id")
                   keyword)]
     (integer table cname [:refer ptable :id :on-delete :set-null])))
+
+(defmacro tbl [name & elements]
+  `(-> (table ~name)
+       (timestamps)
+       ~@(reverse elements)
+       (surrogate-key)))
