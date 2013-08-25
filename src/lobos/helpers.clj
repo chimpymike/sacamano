@@ -24,5 +24,6 @@
 (defmacro tbl [name & elements]
   `(-> (table ~name)
        (timestamps)
+       (userstamps)
        ~@(reverse elements)
        (surrogate-key)))
