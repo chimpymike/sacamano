@@ -10,6 +10,11 @@
       (timestamp :last_update_date)
       (timestamp :creation_date (default (now)))))
 
+(defn userstamps [table]
+  (-> table
+      (integer :created_by [:refer :users :id :on-delete :set-null])
+      (integer :last_updated_by [:refer :users :id :on-delete :set-null])))
+
 (defn refer-to [table ptable]
   (let [cname (-> (->> ptable name butlast (apply str))
                   (str "_id")
