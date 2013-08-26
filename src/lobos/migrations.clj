@@ -19,3 +19,10 @@
                (varchar :title 200)
                (text :body))))
   (down [] (drop (table :posts))))
+
+(defmigration add-comments-table
+  (up [] (create
+          (tbl :comments
+               (text :content)
+               (refer-to :posts))))
+  (down [] (drop (table :comments))))
