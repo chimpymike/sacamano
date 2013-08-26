@@ -11,3 +11,11 @@
                (varchar :email 100 unique)
                (check :name (> (length :name) 1)))))
   (down [] (drop (table :sacamano_users))))
+
+(defmigration add-posts-table
+  (up [] (create
+          (tbl :posts
+               (varchar :slug 200)
+               (varchar :title 200)
+               (text :body))))
+  (down [] (drop (table :posts))))
