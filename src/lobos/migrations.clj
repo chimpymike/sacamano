@@ -7,8 +7,8 @@
 (defmigration add-users-table
   (up [] (create
           (tbl :sacamano_users
-               (varchar :name 100 unique)
-               (varchar :email 100 unique)
+               (varchar :name 100 :unique)
+               (varchar :email 100 :unique)
                (check :name (> (length :name) 1)))))
   (down [] (drop (table :sacamano_users))))
 
