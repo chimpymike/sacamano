@@ -12,8 +12,8 @@
 
 (defn userstamps [table]
   (-> table
-      (integer :created_by [:refer :users :id :on-delete :set-null])
-      (integer :last_updated_by [:refer :users :id :on-delete :set-null])))
+      (integer :created_by [:refer :sacamano_users :id :on-delete :set-null])
+      (integer :last_updated_by [:refer :sacamano_users :id :on-delete :set-null])))
 
 (defn refer-to [table ptable]
   (let [cname (-> (->> ptable name butlast (apply str))
