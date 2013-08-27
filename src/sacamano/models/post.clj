@@ -1,2 +1,2 @@
 (ns sacamano.models.post
-  (:require korma.core))
+  (:require [korma.core :refer :all]))
