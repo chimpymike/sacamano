@@ -1,1 +1,2 @@
-(ns sacamano.views.blog)
+(ns sacamano.views.blog
+  (:require [hiccup.core :refer :all]))
