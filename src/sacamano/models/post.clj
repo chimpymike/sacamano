@@ -21,3 +21,8 @@
     (insert posts
       (values {:slug slug :title title
                :body body :created_by user-id}))))
+
+(defn get-all-posts
+  "Return all the posts from the database."
+  []
+  (select posts))
