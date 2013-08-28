@@ -6,7 +6,8 @@
                  [lobos "1.0.0-beta1"]
                  [com.h2database/h2 "1.3.173"]
                  [korma "0.3.0-RC5"]
-                 [org.clojure/java.jdbc "0.3.0-alpha4"]]
+                 [org.clojure/java.jdbc "0.3.0-alpha4"]
+                 [hiccup "1.0.4"]]
   :plugins [[lein-ring "0.8.5"]]
   :ring {:handler sacamano.handler/app}
   :profiles
