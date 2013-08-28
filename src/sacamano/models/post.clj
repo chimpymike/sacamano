@@ -13,3 +13,11 @@
     (-> s
         (str/replace slug-regex replacement-char)
         (str/replace trim-dashes-regex ""))))
+
+(defn add-post
+  "Create a new post and save it to the database."
+  [title body user-id]
+  (let [slug (make-slug title)]
+    (insert posts
+      (values {:slug slug :title title
+               :body body :created_by user-id}))))
