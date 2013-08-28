@@ -5,8 +5,7 @@
 
 (defentity users
   (table :sacamano_users)
-  (has-many posts))
+  (has-many posts {:fk :created_by}))
 
 (defentity posts
-  (belongs-to users :created_by)
-  (belongs-to users :last_updated_by))
+  (belongs-to users {:fk :created_by}))
