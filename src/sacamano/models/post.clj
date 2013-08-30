@@ -1,6 +1,7 @@
 (ns sacamano.models.post
   (:require [korma.core :refer :all])
   (:require [sacamano.models.entities :refer :all])
+  (:require [sacamano.models.db :only db])
   (:require [clojure.string :as str]))
 
 (defn make-slug
