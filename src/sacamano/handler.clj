@@ -1,7 +1,8 @@
 (ns sacamano.handler
   (:use compojure.core)
   (:require [compojure.handler :as handler]
-            [compojure.route :as route]))
+            [compojure.route :as route]
+            [sacamano.controllers.blog :as blog-controller]))
 
 (defroutes app-routes
   (GET "/" [] "Hello World")
