@@ -12,4 +12,6 @@
   (has-many posts {:fk :created_by}))
 
 (defentity posts
-  (belongs-to users {:fk :created_by}))
+  (belongs-to users {:fk :created_by})
+  (transform #(-> %
+                  (update-in [:body] clob-to-string))))
