@@ -5,3 +5,5 @@
   (let [{:keys [title body]} post]
     (html [:h1 title] [:h2 body])))
 
+(defn index-page [posts]
+  (apply str (mapcat post-partial posts)))
