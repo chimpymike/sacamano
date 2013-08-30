@@ -5,7 +5,7 @@
             [sacamano.controllers.blog :as blog-controller]))
 
 (defroutes app-routes
-  (GET "/" [] "Hello World")
+  (GET "/" [] (blog-controller/index-page))
   (route/resources "/")
   (route/not-found "Not Found"))
 
