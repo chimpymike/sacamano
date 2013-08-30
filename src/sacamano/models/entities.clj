@@ -1,6 +1,10 @@
 (ns sacamano.models.entities
   (:require [korma.core :refer :all]))
 
+(defn clob-to-string [clob]
+  (with-open [rdr (java.io.BufferedReader. (.getCharacterStream clob))]
+    (apply str (line-seq rdr))))
+
 (declare users posts)
 
 (defentity users
