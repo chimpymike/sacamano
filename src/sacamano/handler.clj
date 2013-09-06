@@ -6,6 +6,7 @@
 
 (defroutes app-routes
   (GET "/" [] (blog-controller/index-page))
+  (GET "/:post-slug" [post-slug] (blog-controller/single-post-page post-slug))
   (route/resources "/")
   (route/not-found "Not Found"))
 
