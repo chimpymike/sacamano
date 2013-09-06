@@ -7,3 +7,6 @@
 
 (defn index-page [posts]
   (apply str (mapcat post-partial posts)))
+
+(defn single-post-page [post]
+  (post-partial post))
