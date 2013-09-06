@@ -27,3 +27,9 @@
   "Return all the posts from the database."
   []
   (select posts))
+
+(defn get-post-by-id
+  "Return a single post from the database based on id."
+  [post-id]
+  (first (select posts (where {:id post-id}))))
+
