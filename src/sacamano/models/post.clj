@@ -33,3 +33,7 @@
   [post-id]
   (first (select posts (where {:id post-id}))))
 
+(defn get-post-by-slug
+  "Return a single post from the database based on slug."
+  [post-slug]
+  (first (select posts (where {:slug post-slug}))))
