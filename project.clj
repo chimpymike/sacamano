@@ -11,4 +11,5 @@
   :plugins [[lein-ring "0.8.5"]]
   :ring {:handler sacamano.handler/app}
   :profiles
-  {:dev {:dependencies [[ring-mock "0.1.5"]]}})
+  {:dev {:dependencies [[ring-mock "0.1.5"]]
+         :ring {:nrepl {:start? true :port 10000}}}})
